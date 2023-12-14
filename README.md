@@ -1,18 +1,27 @@
-## Getting Started
+# Aplicación de Cajero Automático
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Esta es una aplicación de cajero automático simple desarrollada en Java. Permite a los usuarios registrarse, iniciar sesión, realizar diferentes movimientos y consultar su saldo en una base de datos MySQL.
 
-## Folder Structure
+## Funcionalidades
 
-The workspace contains two folders by default, where:
+- Registro de usuarios: Los usuarios pueden registrarse con un nombre de usuario y una contraseña.
+- Inicio de sesión: Los usuarios pueden iniciar sesión con sus credenciales registradas.
+- Consulta de saldo: Los usuarios pueden verificar su saldo actual.
+- Gestión de transacciones: Los saldos de los usuarios se actualizan automáticamente después de las transacciones.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Requisitos
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Java 8 o superior.
+- Base de datos MySQL.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Configuración
 
-## Dependency Management
+1. Configura la base de datos MySQL y actualiza las credenciales en el archivo `BBDDConexion.java`.
+2. Ejecuta la aplicación Java.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Uso
+
+1. Ejecuta la aplicación.
+2. Selecciona la opción deseada: registro o inicio de sesión.
+3. Sigue las instrucciones en pantalla para completar la acción seleccionada.
+

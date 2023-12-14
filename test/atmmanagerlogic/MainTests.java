@@ -1,4 +1,4 @@
-package ATMManagerLogic;
+package atmmanagerlogic;
 
 public class MainTests {
 
