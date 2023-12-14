@@ -52,18 +52,32 @@ public class BBDDConexion {
      */
     protected boolean isUserInDB(User actualUser) {
         boolean userInDB = false;
+        PreparedStatement userCheckStatement = null;
+        ResultSet userCheckResult = null;
         try {
-            PreparedStatement userCheckStatement = connection
+            userCheckStatement = connection
                     .prepareStatement("SELECT * FROM users WHERE username = ?");
             userCheckStatement.setString(1, actualUser.getUsername());
-            ResultSet userCheckResult = userCheckStatement.executeQuery();
+            userCheckResult = userCheckStatement.executeQuery();
 
             if (userCheckResult.next()) {
                 userInDB = true;
             }
 
         } catch (SQLException e) {
+
             e.printStackTrace();
+        } finally {
+            try {
+                if (userCheckStatement != null) {
+                    userCheckStatement.close();
+                }
+                if (userCheckResult != null) {
+                    userCheckResult.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return userInDB;
 
