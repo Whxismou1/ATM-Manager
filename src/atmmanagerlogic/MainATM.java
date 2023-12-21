@@ -2,7 +2,11 @@ package atmmanagerlogic;
 
 public class MainATM {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        // MainMenu MainMenu = new MainMenu();
+        // MainMenu.start();
+        BBDDConexion bbdd = new BBDDConexion();
+        bbdd.openConection();
+        bbdd.closeConection();
 
     }
 }

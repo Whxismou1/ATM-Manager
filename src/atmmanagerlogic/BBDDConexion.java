@@ -14,9 +14,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BBDDConexion {
-    private static final String URL_JDBC = "jdbc:mysql://localhost:3306/atmmanager";
-    private static final String USER_JDBC = "root2";
-    private static final String PASSWORD_JDBC = "root2";
+
+    private static final String URL_JDBC = System.getenv("URL_JDBC");
+    private static final String USER_JDBC = System.getenv("USER_JDBC");
+    private static final String PASSWORD_JDBC = System.getenv("PASSWORD_JDBC");
+
     private Connection connection;
 
     /***

@@ -20,11 +20,11 @@ public class EnconderSHA {
      * @return passwordHashed: Contraseña encriptada para guardarla en la BBDD
      * @throws NoSuchAlgorithmException
      */
-    protected String encode(String userPassword) throws NoSuchAlgorithmException {
+    protected String encode(String userCredential) throws NoSuchAlgorithmException {
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
 
-        byte[] password2Bytes = userPassword.getBytes();
+        byte[] password2Bytes = userCredential.getBytes();
 
         byte[] password2Hash = md.digest(password2Bytes);
 
