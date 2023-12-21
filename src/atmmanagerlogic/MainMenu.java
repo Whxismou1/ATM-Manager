@@ -5,27 +5,26 @@ import java.util.Scanner;
 public class MainMenu {
 
     private Scanner sc;
+    private LoginRegister loginRegister;
 
     public MainMenu() {
         sc = new Scanner(System.in);
+        loginRegister = new LoginRegister();
     }
 
     protected void start() {
         int option;
         do {
-            System.out.println("Bienvenido al ATM Manager");
-            System.out.println("1. Iniciar sesion");
-            System.out.println("2. Registrarse");
-            System.out.println("3. Salir");
+            printMainMenu();
 
             option = getOption();
 
             switch (option) {
                 case 1:
-                    System.out.println("Iniciando sesion");
+                    loginRegister.logIn(sc);
                     break;
                 case 2:
-                    System.out.println("Registrando usuario");
+                    loginRegister.register(sc);
                     break;
                 case 3:
                     System.out.println("Exiting ATM Manager");
@@ -43,9 +42,17 @@ public class MainMenu {
         while (!sc.hasNextInt()) {
             sc.next(); // Limpiar el búfer de entrada
             System.out.println("ERROR: The option must be a number.");
-            System.out.print("Try again: ");
+            System.out.print("Try again [1-3]: ");
         }
         return sc.nextInt();
 
     }
+
+    private void printMainMenu() {
+        System.out.println("Bienvenido al ATM Manager");
+        System.out.println("1. Log In");
+        System.out.println("2. Sign up");
+        System.out.println("3. Exit");
+    }
+
 }
