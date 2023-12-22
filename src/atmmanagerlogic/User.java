@@ -8,8 +8,7 @@ public class User {
     private String username;
     private String password;
 
-    public User(int id, String name, String dni, String email, String username, String password) {
-        this.id = id;
+    public User(String name, String dni, String email, String username, String password) {
         this.fullName = name;
         this.dni = dni;
         this.email = email;
@@ -20,6 +19,10 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    protected void setID(int IDS) {
+        this.id = IDS;
     }
 
     protected int getId() {

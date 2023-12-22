@@ -4,10 +4,10 @@ USE atmmanager;
 -- Tabla de usuarios
 CREATE TABLE IF NOT EXISTS users(
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
-    fullName nvarchar(100),
-    dni nvarchar(20),
-    email nvarchar(50),
-    username NVARCHAR(50) UNIQUE NOT NULL,
+    fullName nvarchar(255),
+    dni nvarchar(255),
+    email nvarchar(255),
+    username NVARCHAR(255) UNIQUE NOT NULL,
     password NVARCHAR(255) NOT NULL,
     balance DECIMAL(10, 2) DEFAULT 0.0
 );
