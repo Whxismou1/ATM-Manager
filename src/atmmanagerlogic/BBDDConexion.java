@@ -41,7 +41,6 @@ public class BBDDConexion {
     protected void openConection() {
         try {
             connection = DriverManager.getConnection(URL_JDBC, USER_JDBC, PASSWORD_JDBC);
-            System.out.println("Conexion establecida");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -54,7 +53,7 @@ public class BBDDConexion {
     protected void closeConection() {
         try {
             connection.close();
-            System.out.println("Conexion cerrada");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -255,11 +254,11 @@ public class BBDDConexion {
         int idUser = 0;
         PreparedStatement getIdStatement = null;
         try {
-            getIdStatement = connection.prepareStatement("SELECT id FROM users WHERE username = ?");
+            getIdStatement = connection.prepareStatement("SELECT user_id FROM users WHERE username = ?");
             getIdStatement.setString(1, enconderSHA.encode(actualUser.getUsername()));
             ResultSet rs = getIdStatement.executeQuery();
             if (rs.next()) {
-                idUser = rs.getInt("id");
+                idUser = rs.getInt("user_id");
             }
 
         } catch (SQLException e) {
@@ -279,7 +278,7 @@ public class BBDDConexion {
             ResultSet rs = checkTransactionsStatement.executeQuery();
             while (rs.next()) {
                 System.out.println("Transaction type: " + rs.getString("transaction_type") + " Amount: "
-                        + rs.getInt("amount"));
+                        + rs.getInt("amount") + "€");
             }
 
         } catch (SQLException e) {

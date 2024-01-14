@@ -28,6 +28,7 @@ public class OperationsMenu {
                     break;
                 case 3:
                     checktransactions(sc, actualUser);
+                    break;
                 case 4:
                     System.out.println("Exiting ATM Manager");
                     System.exit(0);
@@ -60,7 +61,7 @@ public class OperationsMenu {
             e.printStackTrace();
         }
         bbddConexion.closeConection();
-        System.out.println("Your actual balance is: " + actualBalance);
+        System.out.println("Your actual balance is: " + actualBalance + "€");
 
         System.out.print("Introduce the amount to withdraw: ");
         int amount = getOption(sc);
