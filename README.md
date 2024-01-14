@@ -1,6 +1,6 @@
 # Aplicación de Cajero Automático
 
-Esta es una aplicación de cajero automático simple desarrollada en Java. Permite a los usuarios registrarse, iniciar sesión, realizar distintos movimientos y consultar su saldo utilizando una base de datos MySQL.
+Esta es una aplicación de cajero automático simple desarrollada en Java. Permite a los usuarios registrarse, iniciar sesión, realizar distintos movimientos, consultar su saldo y movimientos utilizando una base de datos MySQL.
 
 ## Funcionalidades
 
